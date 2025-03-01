@@ -292,6 +292,8 @@ function renderRaceStartView(track_name) {
 }
 
 function resultsView(positions) {
+	let userPlayer = positions.find(e => e.id === parseInt(store.player_id));
+	positions = positions.sort((a, b) => (a.segment > b.segment) ? -1 : 1);
 	userPlayer.driver_name += " (you)"
 	let count = 1
   
